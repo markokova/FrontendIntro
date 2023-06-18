@@ -1,0 +1,28 @@
+h1, #newMovieForm{
+  color: #ffffff;
+  text-align: center;
+  background-color: #bb8495;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.styled-table {
+  border-collapse: collapse;    
+  width: 80%;
+  margin-left: 150px;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #fff0f0;
+}
+
+.styled-table th {
+  background-color: #bb8495;
+}
+
+input{
+  margin-bottom: 5px;
+}
