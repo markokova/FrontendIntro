@@ -14,10 +14,10 @@ function MovieTable({movies, deleteMovie, updateMovie}){
                 </thead>
                 <tbody id="moviesTableBody">
                     {movies.map((movie) => (
-                        <tr key={movie.id}>
-                            <td>{movie.title}</td>
-                            <td>{movie.runtime}</td>
-                            <td>{movie.yearOfRelease}</td>
+                        <tr key={movie.Id}>
+                            <td>{movie.Title}</td>
+                            <td>{movie.Runtime}</td>
+                            <td>{movie.YearOfRelease}</td>
                             <td><Button text="Update" onClick={() => updateMovie(movie.id)}/><Button text="Delete" onClick={() => deleteMovie(movie.id)}/></td>
                         </tr>
                     ))}

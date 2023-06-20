@@ -1,7 +1,8 @@
 import './App.css';
 import MovieForm from './MovieForm'
 import MovieTable from './MovieTable';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
   const initalMovieValue = {
@@ -16,6 +17,21 @@ function App() {
   const [showCreateForm, setShowCreateForm] = useState(true);
   const [updateMovieId, setUpdateMovieId] = useState(null);
 
+  useEffect(() => {
+    getMovies();
+  }, []);
+
+  const getMovies = () => {
+    axios
+    .get("https://localhost:44394/api/Movie")
+    .then((response) => {
+        console.log(response);
+        setMovies(response.data.AllMovieRests)
+    })
+    .catch((error) => {
+      console.error("Error fetching movies:", error);
+    });
+  }
 
   const setMovieValue = (movie) => {
     setMovie(movie);
