@@ -1,5 +1,5 @@
 import Button from '../Button';
-
+import { Link } from "react-router-dom";
 function MovieTable({movies, deleteMovie, updateMovie, updateMovieId}){
     return(
         <div>
@@ -14,12 +14,14 @@ function MovieTable({movies, deleteMovie, updateMovie, updateMovieId}){
                 </thead>
                 <tbody id="moviesTableBody">
                     {movies.map((movie) => (
-                        <tr key={movie.Id} className={updateMovieId === movie.Id ? 'selectedRow' : ''}>
-                            <td>{movie.Title}</td>
-                            <td>{movie.Runtime}</td>
-                            <td>{movie.YearOfRelease}</td>
-                            <td><Button text="Update" onClick={() => updateMovie(movie.Id)}/><Button text="Delete" onClick={() => deleteMovie(movie.Id)}/></td>
-                        </tr>
+                            <tr key={movie.Id} className={updateMovieId === movie.Id ? 'selectedRow' : ''}>
+                                <Link to={`/${movie.Id}`}>
+                                <td>{movie.Title}</td>
+                                <td>{movie.Runtime}</td>
+                                <td>{movie.YearOfRelease}</td>
+                                <td><Button text="Update" onClick={() => updateMovie(movie.Id)}/><Button text="Delete" onClick={() => deleteMovie(movie.Id)}/></td>
+                                </Link>
+                            </tr> 
                     ))}
                 </tbody>
             </table>

@@ -40,3 +40,35 @@ button{
 .selectedRow{
   color:#bb8495;
 }
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: #bb8495;
+  color:white;
+}
+
+.nav-links{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+  font-size: 1.1em; 
+}
+
+#movieDetails {
+  text-align: center;
+  color:#bb8495;
+}

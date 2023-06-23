@@ -5,6 +5,10 @@ export const getMovies = () => {
     return axios.get("https://localhost:44394/api/Movie");
   }
 
+export const getMovieById = (movieId) => {
+  return axios.get("https://localhost:44394/api/Movie/" + movieId);
+}
+
 
 export const handleSubmit = (e, movie) => {
     e.preventDefault();
