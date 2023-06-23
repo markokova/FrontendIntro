@@ -1,6 +1,6 @@
-import Button from './Button';
+import Button from '../Button';
 
-function MovieTable({movies, deleteMovie, updateMovie}){
+function MovieTable({movies, deleteMovie, updateMovie, updateMovieId}){
     return(
         <div>
             <table className="styled-table">
@@ -14,11 +14,11 @@ function MovieTable({movies, deleteMovie, updateMovie}){
                 </thead>
                 <tbody id="moviesTableBody">
                     {movies.map((movie) => (
-                        <tr key={movie.Id}>
+                        <tr key={movie.Id} className={updateMovieId === movie.Id ? 'selectedRow' : ''}>
                             <td>{movie.Title}</td>
                             <td>{movie.Runtime}</td>
                             <td>{movie.YearOfRelease}</td>
-                            <td><Button text="Update" onClick={() => updateMovie(movie.id)}/><Button text="Delete" onClick={() => deleteMovie(movie.id)}/></td>
+                            <td><Button text="Update" onClick={() => updateMovie(movie.Id)}/><Button text="Delete" onClick={() => deleteMovie(movie.Id)}/></td>
                         </tr>
                     ))}
                 </tbody>
